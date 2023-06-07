@@ -9,9 +9,9 @@
       booksList: '.books-list',
     },
     book: {
-        image: '.books-list .book__image',
-      }
-    };
+      image: '.books-list .book__image',
+    }
+  };
   
   const classNames = {
     favorite: 'favorite',
@@ -33,17 +33,17 @@
 
   function initActions(){
 
-  const books = document.querySelectorAll(select.book.image);
+    const books = document.querySelectorAll(select.book.image);
 
-  for(let book of books){
-    book.addEventListener('dblclick', function(event){
-      event.preventDefault();
-      book.classList.add(classNames.favorite);
-      book = clickedElement.getAttribute('data-id');
-      favoriteBooks.push(targetBook);
-    });
+    for(let book of books){
+      book.addEventListener('dblclick', function(event){
+        event.preventDefault();
+        book.classList.add(classNames.favorite);
+        book = clickedElement.getAttribute('data-id');
+        favoriteBooks.push(targetBook);
+      });
+    }
   }
-}
   renderBooks();
   initActions();
 }
