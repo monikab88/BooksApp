@@ -32,17 +32,17 @@
       thisBooksList.initActions();
     }
   
-  initData() {
-    this.data = dataSource.books;
-    const thisBooksList = this;
+    initData() {
+      this.data = dataSource.books;
+      const thisBooksList = this;
 
-    for(let book of this.data){
-      book.ratingBgc = thisBooksList.determineRatingBgc(book.rating);;
-      book.ratingWidth = book.rating * 10;
-      const generatedHTML = templates.books(book);
-      thisBooksList.element = utils.createDOMFromHTML(generatedHTML);
-      const menuContainer = document.querySelector(select.containerOf.booksList);
-      menuContainer.appendChild(thisBooksList.element);
+      for(let book of this.data){
+        book.ratingBgc = thisBooksList.determineRatingBgc(book.rating);
+        book.ratingWidth = book.rating * 10;
+        const generatedHTML = templates.books(book);
+        thisBooksList.element = utils.createDOMFromHTML(generatedHTML);
+        const menuContainer = document.querySelector(select.containerOf.booksList);
+        menuContainer.appendChild(thisBooksList.element);
       }
     }
     getElements() {
