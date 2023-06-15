@@ -130,5 +130,6 @@
       return thisBooksList.ratingBgc;
     } 
   }
+  
   const app = new BooksList();
 }
